@@ -48,7 +48,10 @@ else:
 			
 			outFile = open('output.txt','a')
 			for row in orderedAttack:
-				outFile.write("{}:{},{};".format(row[0],str(row[2]),str(row[3])))
+				if(orderedAttack.index(row) == len(orderedAttack) - 1):
+					outFile.write("{}:{},{}".format(row[0],str(row[2]),str(row[3])))
+				else:	
+					outFile.write("{}:{},{};".format(row[0],str(row[2]),str(row[3])))
 			outFile.write("\n")
 		outFile.close()
 			
